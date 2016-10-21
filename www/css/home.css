@@ -17,10 +17,10 @@
  * under the License.
  */
 
- body{
-	 margin:0;
-	 padding:0;
- }
+body{
+    margin:0;
+    padding:0;
+}
 .btn{
     width: 100%;
     border: none;
@@ -30,25 +30,25 @@
     position: absolute;
     right: 0;
     left: 0;
-	font-size: 25px;
+    font-size: 25px;
 }
 
 .btn:focus{
-	border:none;
-	outline: none;
+    border:none;
+    outline: none;
 }
 
 .a-venir{
-	background-color: #6DBFC4;
-	top : 0;
+    background-color: #6DBFC4;
+    top : 0;
 }
 
 .les-photos{
-	background-color: #EDB81C;
-	top :33.33%;
+    background-color: #EDB81C;
+    top :33.33%;
 }
 
 .flashback{
-	background-color: #E75F71;
-	top :66.66%;
+    background-color: #E75F71;
+    top :66.66%;
 }

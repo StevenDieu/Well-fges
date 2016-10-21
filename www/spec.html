@@ -35,7 +35,7 @@
         <script type="text/javascript" src="spec/index.js"></script>
 
         <script type="text/javascript">
-            (function() {
+            (function () {
                 var jasmineEnv = jasmine.getEnv();
                 jasmineEnv.updateInterval = 1000;
 
@@ -43,13 +43,13 @@
 
                 jasmineEnv.addReporter(htmlReporter);
 
-                jasmineEnv.specFilter = function(spec) {
+                jasmineEnv.specFilter = function (spec) {
                     return htmlReporter.specFilter(spec);
                 };
 
                 var currentWindowOnload = window.onload;
 
-                window.onload = function() {
+                window.onload = function () {
                     if (currentWindowOnload) {
                         currentWindowOnload();
                     }
