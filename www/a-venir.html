@@ -61,10 +61,13 @@
 
         <script type="text/javascript">
 
-            $.getJSON("http://comfges.com/api/flashback/", function (data) {
-                console.log(data);
-                //$("#image").html(data.userId);
-                //$("#title").html(data.title);
+            $.getJSON("https://raw.githubusercontent.com/docdonkun/Com-FGES/master/www/test.html", function (datas) {
+                jQuery.each(datas, function (i, val) {
+                    console.log(val);
+                });
+
+
+
                 //$("#body").html(data.body);
             });
 
