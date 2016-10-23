@@ -55,19 +55,22 @@
             </h1>
 
         </div>
-        <span id="image"></span><br/>
-        <span id="title"></span><br/>
-        <span id="body"></span>
+        <span id="titre"></span><br/>
+        <span id="description"></span><br/>
+        <span id="date"></span>
 
         <script type="text/javascript">
 
-            $.getJSON("https://raw.githubusercontent.com/docdonkun/Com-FGES/master/www/test.html", function (datas) {
+            $.getJSON("https://raw.githubusercontent.com/docdonkun/Com-FGES/master/www/test_1.html", function (datas) {
                 jQuery.each(datas, function (i, val) {
-                    console.log(val);
+                    $("#titre").html(val.titre);
+                    $("#description").html(val.description);
+                    $("#date").html(val.date_debut);
                 });
 
 
-
+                //$("#image").html(data.userId);
+                //$("#title").html(data.title);
                 //$("#body").html(data.body);
             });
 
