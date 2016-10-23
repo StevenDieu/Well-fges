@@ -61,10 +61,11 @@
 
         <script type="text/javascript">
 
-            $.getJSON("https://jsonplaceholder.typicode.com/posts/1", function (data) {
-                $("#image").html(data.userId);
-                $("#title").html(data.title);
-                $("#body").html(data.body);
+            $.getJSON("http://comfges.com/api/flashback/", function (data) {
+                console.log(data);
+                //$("#image").html(data.userId);
+                //$("#title").html(data.title);
+                //$("#body").html(data.body);
             });
 
         </script>
