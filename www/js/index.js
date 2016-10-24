@@ -16,27 +16,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+var url = "http://comfges.com/";
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -49,4 +51,21 @@ var app = {
 
 };
 
+function $_GET(param) {
+    var vars = {};
+    window.location.href.replace(location.hash, '').replace(
+            /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+            function (m, key, value) { // callback
+                vars[key] = value !== undefined ? value : '';
+            }
+    );
 
+    if (param) {
+        return vars[param] ? vars[param] : null;
+    }
+    return vars;
+}
+
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(find, 'g'), replace);
+}

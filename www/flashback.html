@@ -40,6 +40,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <link rel="stylesheet" type="text/css" href="css/flashback.css" />
 
+        <script src="js/jquery.min.js"></script>
         <title>Com’ FGES - Flashback</title>
     </head>
 
@@ -53,22 +54,28 @@
                 FLASHBACK
             </h1>
         </div>
-        <a href="./article-flashback.html">
-            <div class="article">
-                <span id="titre-article_1">Le titre</span>
-                <span id="date-article_1">10-10-2016</span>
-            </div>
-        </a>
-        <a href="./article-flashback.html">
-            <div class="article">
-                <span id="titre-article_2">Super soirée à la catholique de lille</span>
-                <span id="date-article_2">10-10-2016</span>
-            </div>
-        </a>
+        <div id="loader" class="background-loader"><img class="center_screen" src="img/loader.gif" alt=""/></div>
+        <div id="listeArticle" class="none">
+
+        </div>
 
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+
+            $.getJSON(url + "api/listeFlashback/1", function (datas) {
+                jQuery.each(datas, function (i, val) {
+                    $("#listeArticle").append('\
+                        <a href="./article-flashback.html?id=' + val.id + '">\n\
+                        <div class="article">\n\
+                        <span>' + val.titre + '</span>\n\
+                        <span>' + val.date_debut + '</span>\n\
+                        </div>\n\
+                        </a>');
+                    $("#loader").addClass("none");
+                    $("#listeArticle").removeClass("none");
+                });
+            });
         </script>
     </body>
 
