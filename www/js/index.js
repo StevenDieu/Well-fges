@@ -17,7 +17,7 @@
  * under the License.
  */
 
-var url = "http://127.0.0.1:80/";
+var url = "http://comfges.com/";
 var app = {
     // Application Constructor
     initialize: function () {

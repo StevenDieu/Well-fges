@@ -73,3 +73,13 @@ a, a:focus, a:hover{
     padding: 10px;
 }
 
+.center-loader-liste{
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.emplacementWaiterlist{
+    margin-top: 10px;
+}
