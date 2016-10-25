@@ -68,14 +68,14 @@
                     $("#listeArticle").append('\
                         <a href="./article-flashback.html?id=' + val.id + '">\n\
                         <div class="article">\n\
-                        <span>' + val.titre + '</span>\n\
-                        <span>' + val.date_debut + '</span>\n\
+                        <span>' + val.titre + '</span> - \n\
+                        <span class="date_debut">' + val.date_debut + '</span>\n\
                         </div>\n\
                         </a>');
                     $("#loader").addClass("none");
                     $("#listeArticle").removeClass("none");
                 });
-            });
+            })
         </script>
     </body>
 
