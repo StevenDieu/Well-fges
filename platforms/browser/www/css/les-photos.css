@@ -1,3 +1,87 @@
 .menu{
     background-color: #EDB81C;
 }
+
+.imageLeft,.imageRight{
+    width: 50%;
+}
+.imageRight{
+    float: right;
+}
+
+.imageLeft{
+    float: left;
+}
+
+.imagePhoto{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-position: center center;
+    background-size: cover;
+    border: 2px solid white;
+}
+
+.imagePhoto:before{
+    content:'';
+    padding:50% 0;
+    display:inline-block;
+}
+
+.liste-all-photo{
+    border: 2px solid white;
+}
+
+.clearBoth{
+    clear: both;
+}
+
+.center-spinner{
+    position: relative;
+}
+
+.photo-background{
+    min-height: 100%;
+    background-size: contain;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: black;
+}
+
+.article-photo{
+    height: 100%;
+    padding-top: 50px;
+    margin-top: -50px;
+}
+
+.arrow-left,.arrow-right{
+    height: 100%;
+    width: 75px;
+    position: fixed; 
+    top: 50px;
+}
+
+.arrow-left{
+    left: 0;
+}
+
+.arrow-right{
+    right: 0;
+}
+
+.image-arrow{
+    width: 43px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -50px;
+    bottom: 0;
+    opacity: 0.5;
+}
+
+.body-photo{
+    height: 100%;
+    background-color: black;
+}
