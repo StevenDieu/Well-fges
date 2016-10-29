@@ -19,7 +19,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html style="height: 100%">
 
     <head>
         <meta charset="utf-8" />
@@ -44,7 +44,7 @@
         <title>Com’ FGES - Flashback</title>
     </head>
 
-    <body>
+    <body class="body-photo" >
 
         <div class="menu">
             <a id="returnAlbum" href="">
@@ -52,20 +52,32 @@
             </a>
         </div>
 
-        <div id="loader" class="background-loader"><img class="center_screen" src="img/loader.gif" alt=""/></div>
-        <div id="article" class="none article-contenu">
-            <div id="image" class="imagePhoto"></div>
+        <div id="loader" class="background-loader">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+        <div id="article" class="none article-photo">
+
         </div>
 
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
-            $("#returnAlbum").attr("href","./les-photos.html?id=" + $_GET("id_album"))
-            $.getJSON(url + "api/flashback/" + $_GET("id"), function (data) {
-                var description = replaceAll(data.description, '/assets/img/flashback/', url + '/assets/img/flashback/');
-                $("#titre").html(data.titre);
-                $("#date_debut").html(data.date_debut);
-                $("#description").html(description);
+            $("#returnAlbum").attr("href", "./les-photos.html?id=" + $_GET("id_album"));
+            $.getJSON(url + "api/photo/" + $_GET("id_album") + "/" + $_GET("id"), function (data) {
+                var src = replaceAll(data.url, '/assets/img/album/', url + '/assets/img/album/');
+                var previous = "";
+                var next = "";
+                if (data.previousId !== undefined) {
+                    previous = '<a class="arrow-left" href="./article-lesphotos.html?id_album=' + $_GET("id_album") + '&id=' + data.previousId + '"><img class="image-arrow" src="img/arrow-left.png"/></a>';
+                }
+                if (data.nextId !== undefined) {
+                    next = '<a class="arrow-right" href="./article-lesphotos.html?id_album=' + $_GET("id_album") + '&id=' + data.nextId + '"><img class="image-arrow" src="img/arrow-right.png"/></a>';
+                }
+                $("#article").append(previous + '<i class="photo-background" style="background-image: url(' + src + ')" alt="' + data.name + '"></i>' + next);
                 $("#loader").addClass("none");
                 $("#article").removeClass("none");
             });
