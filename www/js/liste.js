@@ -17,14 +17,15 @@ function getListe(showWait) {
         }
         $.getJSON(url + requestUri + start, function (datas) {
             if (datas.error === undefined) {
+                var i = 0;
                 jQuery.each(datas.articles, function (i, val) {
-                    $("#listeArticle").append('\
-                        <a href="./' + urlNextPage + '?id=' + val.id + '">\n\
-                        <div class="article">\n\
-                        <span>' + val.titre + '</span> - \n\
-                        <span class="date_debut">' + val.date_debut + '</span>\n\
-                        </div>\n\
-                        </a>');
+                    if (type === "text") {
+                        changeText(val);
+                    } else {
+                        changeImage(val, i);
+                        i++;
+                    }
+
                 });
                 if (showWait) {
                     $("#loaderListe").addClass("none");
@@ -50,9 +51,35 @@ function getListe(showWait) {
     }
 }
 
+function changeText(val) {
+    $("#listeArticle").append('\
+        <a href="./' + urlNextPage + '?id=' + val.id + '">\n\
+        <div class="article">\n\
+        <span>' + val.titre + '</span> - \n\
+        <span class="date_debut">' + val.date_debut + '</span>\n\
+        </div>\n\
+        </a>');
+}
+
+function changeImage(val, i) {
+    var urlImgage = replaceAll(val.url, '/assets/img/', url + '/assets/img/');
+    var classCss;
+    var div = "";
+    if (i % 2) {
+        classCss = "imageRight";
+    } else {
+        classCss = "imageLeft";
+    }
+    $("#listeArticle").append('\
+        <div class="' + classCss + '">\n\
+        <a href="./' + urlNextPage + '?id_album=' + $_GET("id") + '&id=' + val.id + '">\n\
+        <i class="imagePhoto" style="background-image: url(' + urlImgage + ')" alt="' + val.name + '"></i>\n\
+        </a>\n\
+        </div>' + div);
+}
+
 $(function () {
     getListe(false);
-
     $(window).scroll(function () {
         if ($(window).scrollTop() + $(window).height() == $(document).height()) {
             getListe(true);

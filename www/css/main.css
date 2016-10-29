@@ -83,3 +83,8 @@ a, a:focus, a:hover{
 .emplacementWaiterlist{
     margin-top: 10px;
 }
+
+.center-all{
+    margin: 0 auto;
+    text-align: center;
+}
