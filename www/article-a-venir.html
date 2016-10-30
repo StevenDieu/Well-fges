@@ -39,62 +39,38 @@
         <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <link rel="stylesheet" type="text/css" href="css/a-venir.css" />
-
-        <script src="js/jquery.min.js">
-		</script><script src="js/liste.js"></script> <!-- MMT -->
+		<link rel="stylesheet" type="text/css" href="css/froala_style.css" />
+        <script src="js/jquery.min.js"></script>
         <title>Com’ FGES - A venir</title>
     </head>
 
     <body>
 
         <div class="menu">
-            <a href="./index.html">
+            <a href="./a-venir.html">
                 <img src="img/arrow-white.png" alt="" class="arrow-menu"/>
             </a>
-            <h1 class="title">
-                A VENIR ...
-            </h1>
-
         </div>
-		<!-- MMT
-        <span id="titre"></span><br/>
-        <span id="description"></span><br/>
-        <span id="date"></span>	
-		-->
-		
-		<!-- MMT... -->
-		<div id="loader" class="background-loader"><img class="center_screen" src="img/loader.gif" alt=""/></div>
-        <div id="listeArticle" class="none"></div>
-		<div id="emplacementWaiterlist" class="emplacementWaiterlist"></div>
-        <div id="loaderListe" class="none"><img class="center-loader-liste" src="img/loader.gif" alt=""/></div>
-		<!-- ...MMT -->
-		
-		
-		<!-- MMT
-        <script type="text/javascript">
 
-            $.getJSON("https://raw.githubusercontent.com/docdonkun/Com-FGES/master/www/test_1.html", function (datas) {
-                jQuery.each(datas, function (i, val) {
-                    $("#titre").html(val.titre);
-                    $("#description").html(val.description);
-                    $("#date").html(val.date_debut);
-                });
-            });
+        <div id="loader" class="background-loader"><img class="center_screen" src="img/loader.gif" alt=""/></div>
+        <div id="article" class="none article-contenu">
+            <div id="titre" class="titreAvenir"></div><br/>
+            <div id="date_debut" class="date_debut"></div>
+            <div id="description" class="fr-view"></div>
+        </div>
 
-        </script>
-		-->
-		
         <script type="text/javascript" src="js/index.js"></script>
-		<!-- MMT... -->
         <script type="text/javascript">
             app.initialize();
-            var requestUri = "api/listeFlashback/";
-            var urlNextPage = "article-a-venir.html";
-            var sentence = '<div class="article"><span>Il n\'y pas d\'avenir. Revenez plus tard.</span></div>';
-            var type = "text";
-        </script>		
-		<!-- ...MMT -->
-
+            $.getJSON(url + "api/flashback/" + $_GET("id"), function (data) {
+                var description = replaceAll(data.description, '/assets/img/flashback/', url + '/assets/img/flashback/');
+                $("#titre").html(data.titre);
+                $("#date_debut").html(data.date_debut);
+                $("#description").html(description);
+                $("#loader").addClass("none");
+                $("#article").removeClass("none");
+            });
+        </script>
     </body>
 
 </html>
