@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30 oct. 2016, 14:34:36
+    Author     : Steven Dieu
+*/
+
+
+body{
+    background-color:black;
+    overflow:hidden;
+}
+
+
+.slider{
+    background-color:black;
+    width: 100%;
+    height: 100vh;
+}
+
+.photo-background{
+    min-height: 100%;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loader-white{
+    background-image: url("./../img/loader-white.gif");
+    background-size: 70px 70px;
+}
