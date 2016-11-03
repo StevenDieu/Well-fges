@@ -41,7 +41,7 @@
         <link rel="stylesheet" type="text/css" href="css/a-venir.css" />
 
         <script src="js/jquery.min.js">
-		</script><script src="js/liste.js"></script> <!-- MMT -->
+        </script><script src="js/liste.js"></script> <!-- MMT -->
         <title>Com’ FGES - A venir</title>
     </head>
 
@@ -56,56 +56,42 @@
             </h1>
 
         </div>
-		<!-- MMT
-        <span id="titre"></span><br/>
-        <span id="description"></span><br/>
-        <span id="date"></span>	
-		-->
-		
-		<!-- MMT... -->
-		<div id="loader" class="background-loader"><img class="center_screen" src="img/loader.gif" alt=""/></div>
-        
-		
-		<div id="listeAvenir" class="cadre-a-venir">
-			<div id="titre" class="titreAvenir">
+        <!-- MMT
+<span id="titre"></span><br/>
+<span id="description"></span><br/>
+<span id="date"></span>	
+        -->
+
+        <!-- MMT... -->
+        <div id="loader" class="background-loader"><img class="center_screen" src="img/loader.gif" alt=""/></div>
+
+
+        <div id="listeAvenir" class="cadre-a-venir contenu-after-menu">
+            <div id="titre" class="titreAvenir">
                 Soirée Halloween des IPII !
             </div>
-			<br>
-			<div id="informations" class="date">
+            <br>
+            <div id="informations" class="date">
                 <p> 31 Octobre 2016 21:00 </p>
-				<p> 271 rue Solférino, 59000 LILLE </p>
+                <p> 271 rue Solférino, 59000 LILLE </p>
             </div>
-			<br>
-			<div id="description" class="fr-view">
+            <br>
+            <div id="description" class="fr-view">
                 Venez déguisés !!
             </div>
             <a href="./index.html">
                 <img src="img/halloween.jpg" alt="" class="image"/>
             </a>			
-		</div>
-		
-		
-		<div id="emplacementWaiterlist" class="emplacementWaiterlist"></div>
+        </div>
+
+
+        <div id="emplacementWaiterlist" class="emplacementWaiterlist"></div>
         <div id="loaderListe" class="none"><img class="center-loader-liste" src="img/loader.gif" alt=""/></div>
-		<!-- ...MMT -->
-		
-		
-		<!-- MMT
-        <script type="text/javascript">
+        <!-- ...MMT -->
 
-            $.getJSON("https://raw.githubusercontent.com/docdonkun/Com-FGES/master/www/test_1.html", function (datas) {
-                jQuery.each(datas, function (i, val) {
-                    $("#titre").html(val.titre);
-                    $("#description").html(val.description);
-                    $("#date").html(val.date_debut);
-                });
-            });
 
-        </script>
-		-->
-		
         <script type="text/javascript" src="js/index.js"></script>
-		<!-- MMT... -->
+        <!-- MMT... -->
         <script type="text/javascript">
             app.initialize();
             var requestUri = "api/listeFlashback/";
@@ -113,7 +99,7 @@
             var sentence = '<div class="article"><span>Il n\'y pas d\'avenir. Revenez plus tard.</span></div>';
             var type = "text";
         </script>		
-		<!-- ...MMT -->
+        <!-- ...MMT -->
 
     </body>
 
