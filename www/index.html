@@ -19,7 +19,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html style="height: 100%;">
 
     <head>
         <meta charset="utf-8" />
@@ -43,20 +43,40 @@
         <title>Com’ FGES</title>
     </head>
 
-    <body>
-        <a href="./a-venir.html">
-            <input type="button" id="a-venir" class="btn a-venir" value="A VENIR ..." />
-        </a>
-        <a href="./albums.html">
-            <input type="button" id="les-photos" class="btn les-photos" value="LES PHOTOS" />
-        </a>
-        <a href="./flashback.html">
-            <input type="button" id="flashback" class="btn flashback" value="FLASHBACK" />
-        </a>
-
+    <body style="height: 100%;">
+        <div class="content-home">
+            <div class="logo-heure"><p id="heure"></p></div>
+            <a href="./a-venir.html">
+                <input type="button" id="a-venir" class="btn a-venir" value="A VENIR ..." />
+            </a>
+            <a href="./albums.html">
+                <input type="button" id="les-photos" class="btn les-photos" value="LES PHOTOS" />
+            </a>
+            <a href="./flashback.html">
+                <input type="button" id="flashback" class="btn flashback" value="FLASHBACK" />
+            </a>
+        </div>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+
+            function afficher() {
+                var date = new Date();
+                var minutes = date.getMinutes();
+                if (date.getMinutes() < 10) {
+                    minutes = '0' + minutes;
+                }
+                var hours = date.getHours();
+                if (date.getHours() < 10) {
+                    hours = '0' + hours;
+                }
+                document.getElementById('heure').innerHTML = hours + ":" + minutes;
+            }
+
+            window.onload = function () {
+                afficher();
+                setInterval(afficher, 1000);
+            }
         </script>
     </body>
 

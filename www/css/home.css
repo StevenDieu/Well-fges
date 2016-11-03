@@ -23,32 +23,53 @@ body{
 }
 .btn{
     width: 100%;
-    border: none;
     color: white;
     cursor: pointer;
-    height: 33.33%;
-    position: absolute;
-    right: 0;
-    left: 0;
     font-size: 25px;
 }
 
 .btn:focus{
-    border:none;
     outline: none;
+}
+.content-home{
+    height: 100%;
+}
+.content-home, .logo-heure,.a-venir, .les-photos, .flashback{
+    border : 5px solid white;
+}
+
+.a-venir, .les-photos, .flashback{
+    height: 20%;
+    font-family: "europa";
+}
+
+.logo-heure{
+    width: 100%;
+    color: white;
+    font-size: 28px;
+    height: 40%;
+    background-color: #51BAFC;
+    top :0%;
+    display: flex;
+}
+
+.logo-heure p{
+    margin: auto;
+    font-size: 80px;
+    font-family: arial;
 }
 
 .a-venir{
     background-color: #6DBFC4;
-    top : 0;
+    top :40%;
 }
 
 .les-photos{
     background-color: #EDB81C;
-    top :33.33%;
+    top :60%;
 }
 
 .flashback{
     background-color: #E75F71;
-    top :66.66%;
+    top :80%;
 }
