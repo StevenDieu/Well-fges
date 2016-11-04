@@ -17,7 +17,7 @@
  * under the License.
  */
 
-var url = "http://comfges.stevendieu.com/";
+var url = "http://comfges.com/";
 
 var app = {
     // Application Constructor
