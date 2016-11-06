@@ -16,30 +16,53 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-var url = "http://comfges.com/";
-
+ 
 var app = {
     // Application Constructor
-    initialize: function () {
+    initialize: function() {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function () {
+    bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function () {
+    onDeviceReady: function() {
         app.receivedEvent('deviceready');
+		window.plugins.PushbotsPlugin.initialize("581f67ee4a9efa5ef18b4567", {"android":{"sender_id":"586629882770"}});
+
+		// Should be called once app receive the notification only while the application is open or in background
+		window.plugins.PushbotsPlugin.on("notification:received", function(data){
+			console.log("received:" + JSON.stringify(data));
+			
+			//Silent notifications Only [iOS only]
+			//Send CompletionHandler signal with PushBots notification Id
+			window.plugins.PushbotsPlugin.done(data.pb_n_id);
+		});
+
+		// Should be called once the notification is clicked
+		window.plugins.PushbotsPlugin.on("notification:clicked", function(data){
+			console.log("clicked:" + JSON.stringify(data));
+		});
+
+		// Should be called once the device is registered successfully with Apple or Google servers
+		window.plugins.PushbotsPlugin.on("registered", function(token){
+			console.log(token);
+		});
+
+		//Get device token
+		window.plugins.PushbotsPlugin.getRegistrationId(function(token){
+			console.log("Registration Id:" + token);
+		});
     },
     // Update DOM on a Received Event
-    receivedEvent: function (id) {
+    receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -49,8 +72,9 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
-
 };
+
+var url = "http://comfges.stevendieu.com/";
 
 function $_GET(param) {
     var vars = {};
@@ -68,5 +92,5 @@ function $_GET(param) {
 }
 
 function replaceAll(str, find, replace) {
-  return str.replace(new RegExp(find, 'g'), replace);
+    return str.replace(new RegExp(find, 'g'), replace);
 }

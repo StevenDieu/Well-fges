@@ -44,6 +44,12 @@
     </head>
 
     <body style="height: 100%;">
+		<div class="app">
+			<div id="deviceready" class="blink">
+				<span class="event listening"></span>
+				<span class="event received"></span>
+			</div>
+		</div>
         <div class="content-home">
             <div class="logo-heure"><p id="heure"></p></div>
             <a href="./a-venir.html">
@@ -56,6 +62,9 @@
                 <input type="button" id="flashback" class="btn flashback" value="FLASHBACK" />
             </a>
         </div>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
