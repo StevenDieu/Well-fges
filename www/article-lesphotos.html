@@ -55,7 +55,7 @@
     <body class="body-photo" >
 
         <div class="menu">
-            <a id="returnAlbum" href="">
+            <a href="javascript:history.go(-1)">
                 <img  src="img/arrow-white.png" alt="" class="arrow-menu"/>
             </a>
         </div>
@@ -69,7 +69,6 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
-            $("#returnAlbum").attr("href", "./les-photos.html?id=" + $_GET("id_album"));
         </script>
     </body>
 
