@@ -34,7 +34,7 @@ body{
 .content-home{
     height: 100%;
 }
-.content-home, .logo-heure,.a-venir, .les-photos, .flashback{
+.content-home, .logo,.a-venir, .les-photos, .flashback{
     border : 5px solid white;
 }
 
@@ -43,7 +43,7 @@ body{
     font-family: "europa";
 }
 
-.logo-heure{
+.logo{
     width: 100%;
     color: white;
     font-size: 28px;
@@ -53,10 +53,9 @@ body{
     display: flex;
 }
 
-.logo-heure p{
+.logo p{
     margin: auto;
-    font-size: 80px;
-    font-family: arial;
+    font-size: 55px;
 }
 
 .a-venir{
