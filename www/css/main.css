@@ -97,3 +97,7 @@ a, a:focus, a:hover{
 .contenu-after-menu{
     margin-top: 50px;
 }
+
+.clearBoth{
+    clear: both;
+}

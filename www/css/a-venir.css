@@ -3,7 +3,7 @@
 }
 
 .cadre-a-venir{
-	background-color:powderblue;
+    background-color:powderblue;
 }
 
 .titreAvenir{
@@ -23,14 +23,9 @@
     font-family: "adobe-garamond-pro";
 }
 
-.date{
-    text-transform : capitalize;
-    font-weight: bold;
-    display: inline-block;
-}
 
 .image{
-	text-align: center;
+    text-align: center;
 }
 
 .background-loader{
@@ -38,4 +33,21 @@
     width: 100%;
     height: 100%;
     position: fixed;
+}
+
+.date{
+    text-transform : capitalize;
+    font-weight: bold;
+}
+
+.bloc-right{
+    float: right;
+}
+
+.bloc-left{
+    float: left;
+}
+
+.text-left{
+    text-align: left;
 }

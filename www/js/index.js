@@ -74,7 +74,7 @@ var app = {
     }
 };
 
-var url = "http://comfges.stevendieu.com/";
+var url = "http://comfges.com/";
 
 function $_GET(param) {
     var vars = {};
