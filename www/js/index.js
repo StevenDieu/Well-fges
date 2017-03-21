@@ -35,7 +35,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-        window.plugins.PushbotsPlugin.initialize("581fae554a9efa78148b4569", {"android": {"sender_id": "586629882770"}});
+        window.plugins.PushbotsPlugin.initialize("58d17bcc4a9efa39508b4568", {"android": {"sender_id": "586629882770"}});
 
         // Should be called once app receive the notification only while the application is open or in background
         window.plugins.PushbotsPlugin.on("notification:received", function (data) {
