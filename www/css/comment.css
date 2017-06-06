@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 juin 2017, 14:12:09
+    Author     : steven
+*/
+
+.modal form h1,  input[type="text"]::-webkit--placeholder, textarea::-webkit--placeholder {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal form {
+    margin-left: auto;
+    margin-right: auto ;
+    padding-top: 1px;
+}
+
+.modal input[type="text"],.modal textarea {
+    margin: 20px 5% 0;
+    width: 90%;
+    display: block;
+    border: none;
+    padding: 10px 0;
+    border-bottom: solid 2px #bdc3c7;
+    font-size: 14px;
+}
+
+.modal input:focus,  .modal input:valid,
+.modal textarea:focus,  .modal textarea:valid {
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+}
+
+.modal input[type="text"]:focus::-webkit-input-placeholder, .modal input[type="text"]:valid::-webkit-input-placeholder,
+.modal textarea:focus::-webkit-input-placeholder, .modal textarea:valid::-webkit-input-placeholder
+{
+    color: #000;
+    font-size: 14px;
+}
+
+.modal .button-comment {
+    border: none;
+    background: #bdc3c7;
+    cursor: pointer;
+    padding: 8px 15px;
+    color: white;
+    margin: 0 5px 0;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal p {
+    margin: 0 5%;
+    width: 90%;
+    line-height: 15px;
+    margin-top: 8px;
+}
+
+.modal p.error{
+    color: #e74c3c;
+}
+
+.modal p.success{
+    color: rgb(48, 159, 26);
+    margin-bottom: 20px;
+}
+
+.modal input[type="submit"]:hover {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal input[type="text"].no-margin{
+    margin: 0 auto
+}
+
+.modal .green{
+    background: #7cc06a; 
+}
+
+.modal .list-comment-text {
+    line-height: 17px;
+}
+.modal .list-comment-name {
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.modal .block-list-comment {
+    margin-bottom: 15px;
+}
+
+.modal .list-comment-date {
+    font-size: 13px;
+    color: #9caab6;
+    text-align: right;
+}

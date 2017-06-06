@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="css/comment.css?v=1.3" />
+
+<div class="modal-header"> 
+    <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span></button> 
+    <h4 class="modal-title" id="modal-title">Ajout commentaire</h4> 
+</div> 
+<div class="modal-body" > 
+    <form id="form-comment">
+        <p class="error" id="error"></p>
+
+        <input type="text" class="no-margin" id="name" placeholder="Ton prenom et nom" />
+        <p class="error" id="errorName"></p>
+        <textarea placeholder="Ton commentaire" rows="10" id="text" name="text"></textarea>
+        <p class="error" id="errorText"></p>
+        <p class="info">* Tout commentaire sera vérifié avant publication</p>
+    </form>
+    <p class="success" id="success"></p>
+    <p id="resultName"></p>
+    <p id="resultText"></p>
+</div> 
+<div class="modal-footer"> 
+    <button class="button-comment close-modal" data-dismiss="modal">FERMER</button> 
+    <button class="button-comment green" id="submit-comment" >COMMENTER</button>
+</div> 
+
+<script src="js/addComment.js?v=1.1"></script>

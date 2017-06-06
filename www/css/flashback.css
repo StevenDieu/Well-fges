@@ -3,7 +3,6 @@
 }
 
 .titreFlashback{
-    font-family: Arial,Helvetica,sans-serif;
     font-weight: 700;
     font-size: 32px;
     line-height: 1em;
@@ -16,7 +15,6 @@
     margin: 0 auto;
     text-align: center;
     color: #29384c;
-    font-family: "adobe-garamond-pro";
 }
 
 .background-loader{
@@ -31,3 +29,29 @@
     font-weight: bold;
     display: inline-block;
 }
+
+.block-comment{
+    padding: 0 15px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #E75F71;
+    color: #fff;
+}
+
+.block-icon-comment{
+    background-color: #E75F71;
+    margin-bottom: 15px;
+}
+
+img.add-comment {
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    margin-right: 1px;
+}
+

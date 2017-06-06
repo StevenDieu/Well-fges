@@ -1,5 +1,5 @@
 .menu{
-    background-color: #EDB81C;
+    background-color: #fda660;
 }
 
 .imageLeft,.imageRight{
@@ -80,4 +80,43 @@
 .body-photo{
     height: 100%;
     background-color: black;
+}
+
+.block-comment-picture {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.38);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-family: "adobe-garamond-pro";
+    font-style: normal;
+    padding: 15px;
+}
+
+div.block-count-comment-picture {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+div.block-add-comment-picture {
+    padding-left: 10px;
+    margin: 0;
+    width: auto;
+    cursor: pointer;
+}
+
+img.add-comment {
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    margin-right: 1px;
+}
+
+.block-icon-comment{
+    padding: 0;
 }

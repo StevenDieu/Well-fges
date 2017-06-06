@@ -74,7 +74,7 @@ var app = {
     }
 };
 
-var url = "http://comfges.stevendieu.com/";
+var url = "http://comin.stevendieu.com/";
 
 function $_GET(param) {
     var vars = {};
@@ -88,9 +88,72 @@ function $_GET(param) {
     if (param) {
         return vars[param] ? vars[param] : null;
     }
+
     return vars;
 }
 
 function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 }
+
+var modal = {
+    modal: "",
+    id: "",
+    current: "",
+    needReloadModal: false,
+
+    init: function () {
+        var self = this;
+        $(document).on("click", ".add-comment", function () {
+            self.addContent("add-comment.html", $(this));
+        });
+
+        $(document).on("click", ".list-comment", function () {
+            self.addContent("list-comment.html", $(this));
+        });
+
+        $(document).on("click", ".close-modal", function () {
+            self.hideModal();
+        });
+    },
+
+    addContent: function (specUrl, elt) {
+        this.showModal();
+        if (this.current !== specUrl || this.type !== elt.data("type") || this.id !== elt.data("id") || this.needReloadModal) {
+            this.needReloadModal = false;
+            this.current = specUrl;
+            this.type = elt.data("type");
+            this.id = elt.data("id");
+
+            $(".loader-popin").show();
+            $("#modal-content").empty();
+            
+            $.ajax({
+                url: specUrl,
+                type: "GET",
+                cache: false,
+                success: function (result) {
+                    $(".loader-popin").hide();
+                    $("#modal-content").html(result);
+                },
+                error: function () {
+                    this.hideModal();
+                }
+            });
+        }
+    },
+
+    showModal: function () {
+        $(".modal").show();
+        $("body").addClass("no-scroll-y");
+    },
+
+    hideModal: function () {
+        $(".modal").hide();
+        $("body").removeClass("no-scroll-y");
+    }
+}
+
+$(function () {
+    modal.init();
+});

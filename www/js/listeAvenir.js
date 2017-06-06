@@ -20,6 +20,14 @@ function getListe() {
 }
 
 function changeText(val) {
+    var classListComment = "";
+    var textCommentaire = " commentaires";
+    if (val.number_comment === "0") {
+        textCommentaire = " commentaire";
+    } else {
+        classListComment = "list-comment";
+    }
+
     $("#listeAvenir").append('\
     <div class="article article-contenu">\n\
         <div class="titreAvenir">\n\
@@ -41,6 +49,12 @@ function changeText(val) {
         <div class="text-left" >\n\
             ' + val.description + '\n\
         </div>\n\
+        <a href="Javascript:void(0);" data-type="avenir" data-id="' + val.id + '" class="' + classListComment + ' block-comment">\n\
+        ' + val.number_comment + textCommentaire + '\n\
+        </a>\n\
+        <a href="Javascript:void(0);" data-type="avenir" data-id="' + val.id + '" class="add-comment block-icon-comment">\n\
+            <img class="add-comment" src="img/comment-white.png" alt="add-comment"/><div class="text-icon-comment">Commenter</div>\n\
+        </a>\n\
     </div>');
 }
 

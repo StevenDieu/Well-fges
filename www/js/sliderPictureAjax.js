@@ -67,7 +67,7 @@ $(function () {
 
             $.getJSON(urlApiPhoto + savePicture["id"], function (data) {
                 if (data.url !== undefined) {
-                    addUrlOnImg(savePicture["id"], data.url);
+                    addUrlOnImg(savePicture["id"], data.url, data.number_comment);
                 }
             });
         });
@@ -75,6 +75,7 @@ $(function () {
 
 
     function addImgInDom(isNext) {
+
         if (isNext) {
             $("#slider").append('<i class="photo-background loader-white" id="' + currentPicture["id"] + '" alt=""></i>');
         } else {
@@ -82,13 +83,53 @@ $(function () {
         }
     }
 
-    function addUrlOnImg(id, url) {
+    function addUrlOnImg(id, url, numberComment) {
         var styleImgPresentOnDom = ""
         if ($("#" + id).attr("style") !== undefined) {
             styleImgPresentOnDom = $("#" + id).attr("style");
         }
         $("#" + id).attr("style", styleImgPresentOnDom + ' background-image: url(' + url + ')');
         $("#" + id).removeClass("loader-white");
+
+
+        var classListComment = "";
+        var textCommentaire = " COMMENTAIRES";
+        if (numberComment === "0") {
+            textCommentaire = " COMMENTAIRE";
+        }else{
+            classListComment = " list-comment";
+        }
+        $("<div/>", {
+            class: "block-comment-picture",
+            id: "block-comment-picture" + id
+        }).appendTo("#" + id);
+
+        $("<div/>", {
+            class: "block-count-comment-picture" + classListComment,
+            id: "block-count-comment-picture" + id,
+            text: numberComment + textCommentaire,
+            "data-type": "photo",
+            "data-id": id
+        }).appendTo("#block-comment-picture" + id);
+
+        $("<div/>", {
+            class: "block-add-comment-picture add-comment block-icon-comment",
+            id: "block-add-comment-picture" + id,
+            "data-type": "photo",
+            "data-id": id
+        }).appendTo("#block-comment-picture" + id);
+
+        $("<img/>", {
+            class: "add-comment",
+            src: "img/comment-white.png",
+            alt: "add-comment"
+        }).appendTo("#block-add-comment-picture" + id);
+
+        $("<div/>", {
+            class: "text-icon-comment",
+            text: "COMMENTER"
+        }).appendTo("#block-add-comment-picture" + id);
+
     }
 
     function changeLeftAllPicture(widthWindow) {

@@ -3,12 +3,12 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.fges.wellcom"
-        version   = "1.0.3">
+        id        = "com.fges.comin"
+        version   = "1.0.11">
 
-    <name>WELL' COM</name>
+    <name>COM'IN</name>
     <description>
-        WELL' COM est une application pour gérer les évènement de La catholique de Lille.
+        COM'IN est une application pour gérer les évènement de La catholique de Lille.
     </description>
     <author href="http://comfges.stevendieu.com/assistance" email="fges.app@gmail.com">
         Steven Dieu and Mathieu Menet
@@ -34,6 +34,9 @@
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-splashscreen"        source="npm" spec="~3.2.1" />
     <plugin name="cordova-plugin-statusbar"           source="npm" spec="~2.1.2" />
+        <preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="StatusBarBackgroundColor" value="#000000" />
+        <preference name="StatusBarStyle" value="lightcontent" />
     <plugin name="cordova-plugin-vibration"           source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist"           source="npm" spec="~1.2.1" />
 	<gap:plugin name="pushbots-cordova-plugin" spec="^1.4.0" source="npm" />
@@ -125,7 +128,10 @@
         <icon   src="www/res/icon/windows/Wide310x150Logo.scale-240.png"     platform="windows"   width="744"  height="360" />
         <splash src="www/res/screen/windows/SplashScreenPhone.scale-240.png" platform="windows"   width="1152" height="1920" />
     </platform>
-
+    
+	<feature name="StatusBar">
+		<param name="ios-package" value="CDVStatusBar" onload="true" />
+	</feature>
     <!--
         Define access to external domains.
 
@@ -146,6 +152,7 @@
 
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+	<allow-navigation href="*://*youtube.com" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>

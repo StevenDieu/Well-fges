@@ -33,14 +33,16 @@ body{
 }
 .content-home{
     height: 100%;
+    background-color: #313144;
 }
 .content-home, .logo,.a-venir, .les-photos, .flashback{
-    border : 5px solid white;
+    border : 5px solid #313144;
+    border-radius: 0px !important;
+    background-image: none !important;
 }
 
 .a-venir, .les-photos, .flashback{
     height: 20%;
-    font-family: "europa";
 }
 
 .logo{
@@ -48,7 +50,7 @@ body{
     color: white;
     font-size: 28px;
     height: 40%;
-    background-color: #51BAFC;
+    background-color: #313144;
     top :0%;
     display: flex;
 }
@@ -56,6 +58,8 @@ body{
 .logo p{
     margin: auto;
     font-size: 50px;
+    text-align: center;
+    line-height: 55px;
 }
 
 .a-venir{
@@ -64,7 +68,7 @@ body{
 }
 
 .les-photos{
-    background-color: #EDB81C;
+    background-color: #fda660;
     top :60%;
 }
 
