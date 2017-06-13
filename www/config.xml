@@ -4,14 +4,14 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.fges.comin"
-        version   = "1.0.11">
+        version   = "1.0.0">
 
-    <name>COM'IN</name>
+    <name>FGES com'in</name>
     <description>
-        COM'IN est une application pour gérer les évènement de La catholique de Lille.
+        FGES com’in est une application pour gérer les évènement de La catholique de Lille.
     </description>
     <author href="http://comfges.stevendieu.com/assistance" email="fges.app@gmail.com">
-        Steven Dieu and Mathieu Menet
+        Steven Dieu
     </author>
     <!-- Define the main entry-point to the application -->
     <content src="index.html" />
