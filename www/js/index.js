@@ -101,30 +101,37 @@ var modal = {
     id: "",
     current: "",
     needReloadModal: false,
+    isErrorOnRequest : false,
 
     init: function () {
         var self = this;
-        $(document).on("click", ".add-comment", function () {
+        $(document).on("click", ".add-comment", function (e) {
             self.addContent("add-comment.html", $(this));
+            e.stopPropagation();
         });
 
-        $(document).on("click", ".list-comment", function () {
+        $(document).on("click", ".list-comment", function (e) {
             self.addContent("list-comment.html", $(this));
+            e.stopPropagation();
         });
 
-        $(document).on("click", ".close-modal", function () {
+        $(document).on("click", ".close-modal", function (e) {
             self.hideModal();
+            e.stopPropagation();
         });
     },
 
     addContent: function (specUrl, elt) {
-        this.showModal();
-        if (this.current !== specUrl || this.type !== elt.data("type") || this.id !== elt.data("id") || this.needReloadModal) {
+        if(!this.isErrorOnRequest){
+            this.showModal();
+        }
+        if (this.current !== specUrl || this.type !== elt.data("type") || this.id !== elt.data("id") || this.needReloadModal || this.isErrorOnRequest) {
             this.needReloadModal = false;
             this.current = specUrl;
             this.type = elt.data("type");
             this.id = elt.data("id");
-
+            var self = this;
+            
             $(".loader-popin").show();
             $("#modal-content").empty();
             
@@ -133,11 +140,13 @@ var modal = {
                 type: "GET",
                 cache: false,
                 success: function (result) {
+                    this.isErrorOnRequest = false;
                     $(".loader-popin").hide();
                     $("#modal-content").html(result);
                 },
                 error: function () {
-                    this.hideModal();
+                    this.isErrorOnRequest = true;
+                    self.hideModal();
                 }
             });
         }

@@ -96,11 +96,13 @@
     font-family: "adobe-garamond-pro";
     font-style: normal;
     padding: 15px;
+    z-index: 9998;
 }
 
 div.block-count-comment-picture {
     margin-right: 10px;
     cursor: pointer;
+    z-index: 9999;
 }
 
 div.block-add-comment-picture {
@@ -108,6 +110,7 @@ div.block-add-comment-picture {
     margin: 0;
     width: auto;
     cursor: pointer;
+    z-index: 9999;
 }
 
 img.add-comment {
